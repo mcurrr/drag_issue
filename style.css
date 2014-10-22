@@ -1,0 +1,72 @@
+ul {
+	list-style: none;
+}
+
+li div {
+	text-decoration: none;
+}
+
+.spining-menu_item {
+	margin: 0;
+	width: 150px;
+	height: 150px;
+	color: white;
+	font: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+	font-size: 1.7em;
+	text-align: center;
+	position: absolute;
+	border-radius: 100%;
+	background-color: grey;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	overflow: auto;
+	line-height: 150px;
+}
+
+.spining-menu_item:hover {
+	cursor: pointer;
+}
+
+.spining-menu_item div {
+	display: inline-block;
+	line-height: 1.2;
+	vertical-align: middle;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+           -o-user-select: none;
+              user-select: none;
+}
+
+#wrap {
+	position: relative;
+	width: 100%;
+	margin-top: 150px
+}
+
+#wrap:after
+{
+content: '';
+display: block;
+clear: both;
+}
+
+#another_wrap {
+	position: relative;
+	right: 50%;
+	float: right;
+}
+
+#inner_wrap {
+	position: relative;
+	z-index: 1;
+	right: -50%;
+}
+
+#inner {
+	border-radius: 100%;
+	border: 1px dashed grey;
+}
