@@ -1,9 +1,6 @@
-ul {
-	list-style: none;
-}
-
-li div {
+.ui-draggable-dragging {
 	text-decoration: none;
+	list-style: none;
 }
 
 .spining-menu_item {
@@ -68,5 +65,36 @@ clear: both;
 
 #inner {
 	border-radius: 100%;
-	border: 1px dashed grey;
+}
+
+#drop {
+	position: absolute;
+	left: 50px;
+	top: 200px;
+	width: 300px;
+	height: 300px;
+	line-height: 300px;
+	border-radius: 100%;
+	background-color: pink;
+	text-align: center;
+}
+
+#drop:hover {
+	cursor: pointer;
+}
+
+#drop span {
+	display: inline-block;
+	line-height: 1.2;
+	vertical-align: middle;
+	text-shadow: -2px -1px white, -3px -2px black, 1px 0 black, 0 -1px black;
+	font: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+	font-size: 2.7em;
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+           -o-user-select: none;
+              user-select: none;
 }
