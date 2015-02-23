@@ -5,7 +5,7 @@ var $ = jQuery;
 var max_speed = 0.05,
 	min_speed = 0.01,
 	speed = max_speed,
-	radius = 200,
+	radius = 180,
 	rotate_speed = 8,
 	count = 0;
 
