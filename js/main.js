@@ -48,10 +48,10 @@ setInterval(rotate, rotate_speed);//main loop
 
 //============CONDITION TO HOVER SPINNING AREA=================
 
-$inner.on("mouseenter", function (event) {
+$(document).on("mouseenter", $inner.selector, function (event) {
 	speed = min_speed;
 	});
-$inner.on("mouseleave", function (event) {
+$(document).on("mouseleave", $inner.selector, function (event) {
 	speed = max_speed;
 	});
 
