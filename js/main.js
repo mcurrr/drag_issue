@@ -1,17 +1,15 @@
-jQuery(function () {
-var $ = jQuery;
+$(function() {
+
 
 //experienced variables that can be changed 
 var max_speed = 0.05,
 	min_speed = 0.01,
 	speed = max_speed,
-	radius = 200,
+	radius = 300,
 	rotate_speed = 8,
 	count = 0;
 
 //other variables
-	var dw = $(window).width();
-	var dh = $(window).height();
 	var $menu_item = $(".drag");
 	var num_item = $menu_item.length;
 	var item_h = $menu_item.first().height();
@@ -27,46 +25,35 @@ var max_speed = 0.05,
 	var center_x = $inner.width()/2;
 	var center_y = $inner.height()/2;
 
+	var drop_h = parseInt($drop.css("height"));
+	var drop_w = parseInt($drop.css("width"));
+	$drop.css({"top": center_x - drop_h/2, "left": center_y - drop_w/2});
+
 //main function
 function rotate() {
 
 	$menu_item.each(function() {
 		var angle = count * (Math.PI/180);
-		var new_x = center_x + Math.cos(angle)*radius - $(this).width()/2;
-		var new_y = center_y + Math.sin(angle)*radius - $(this).height()/2;
+		var new_x = center_x + Math.floor(Math.cos(angle)*radius) - $(this).width()/2;
+		var new_y = center_y + Math.floor(Math.sin(angle)*radius) - $(this).height()/2;
 
 		$(this).css("left", new_x + "px").css("top", new_y + "px");
 		count += 360/num_item + speed;
 	});
 };
 
-
 //===========MAIN LOOP=========================
 
 setInterval(rotate, rotate_speed);//main loop
 
-//replacing hover on spinning area
-$(window).on("resize", function(e) {
-	dw = $(window).width();
-	dh = $(window).height();
-});
-
-
 //============CONDITION TO HOVER SPINNING AREA=================
 
-$(document).on("mousemove", function (e) {
-	if( e.pageX > dw/2 - radius - item_w/2 && // 
-		e.pageX < dw/2 + radius + item_w/2 && 
-		e.pageY > dh/2 - radius - item_h/2 && 
-		e.pageY < dh/2 + radius + item_h/2) 
-		{
-		speed = min_speed
-	}
-	else {
-		speed = max_speed
-	}
-});
-
+$inner.on("mouseenter", function (event) {
+	speed = min_speed;
+	});
+$inner.on("mouseleave", function (event) {
+	speed = max_speed;
+	});
 
 //=============DRAG & DROP===================
 
@@ -119,7 +106,7 @@ function dropped ($item) {
 		case "6": $outer.text ("Six");
 		break;
 
-		default: $drop.text ("Fuck you very much!");
+		default: $drop.text ("Aliens are real!");
 	}
 
 	$item.remove();

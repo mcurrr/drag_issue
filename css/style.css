@@ -69,8 +69,6 @@ clear: both;
 
 #drop {
 	position: absolute;
-	left: 50px;
-	top: 200px;
 	width: 300px;
 	height: 300px;
 	line-height: 300px;
