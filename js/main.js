@@ -22,7 +22,7 @@ var max_speed = 0.05,
 	$inner.css({
 		"height": radius*2 + item_h + "px",
 		"width": radius*2 + item_w + "px",
-		//"border": "1px dashed grey"  //in case you wanna highlite spinnig area
+		"border": "1px dashed grey"  //in case you wanna highlite spinnig area
 	});
 	var center_x = $inner.width()/2;
 	var center_y = $inner.height()/2;
